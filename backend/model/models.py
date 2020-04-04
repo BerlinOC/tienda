@@ -19,6 +19,7 @@ class producto (models.Model):
     nombreProducto = models.CharField(max_length=100,verbose_name='nombreProducto')
     descripcion = models.CharField(max_length=100,verbose_name='descripcion')
     precio = models.FloatField()
+    imagen=models.ImageField (upload_to="imagenes")
     categoriaDeProducto = models.ForeignKey(categoria, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
     updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición")

@@ -6,29 +6,29 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
-import { ProductosComponent } from './productos/productos.component';
-import { ProductoComponent } from './producto/producto.component';
-import { ContactoComponent } from './contacto/contacto.component';
-import { CarteraComponent } from './cartera/cartera.component';
-import { SesionComponent } from './sesion/sesion.component';
+import { ProductosComponent } from './product/productos/productos.component';
+import { ProductoComponent } from './product/producto/producto.component';
+
+import { CarteraComponent } from './usuario/cartera/cartera.component';
 import {HttpClientModule} from '@angular/common/http';
-import { RestService} from './productos/rest.service';
+import { RestService} from './product/productos/rest.service';
 import { NotfoundComponent } from './notfound/notfound.component';
 
 import { MenueditorComponent } from './menueditor/menueditor.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { PersonalComponent } from './personal/personal.component';
-import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
-import { ListaProductosComponent } from './lista-productos/lista-productos.component';
-import { ListaCategoriaComponent } from './lista-categoria/lista-categoria.component';
-import { UsuarioformComponent } from './usuarioform/usuarioform.component';
-import { CategoriaformComponent } from './categoriaform/categoriaform.component';
-import { ProductoformComponent } from './productoform/productoform.component';
+
+import { ListaUsuarioComponent } from './admi/lista-usuario/lista-usuario.component';
+import { ListaProductosComponent } from './product/lista-productos/lista-productos.component';
+import { ListaCategoriaComponent } from './categoria/lista-categoria/lista-categoria.component';
+import { UsuarioformComponent } from './usuario/usuarioform/usuarioform.component';
+import { CategoriaformComponent } from './categoria/categoriaform/categoriaform.component';
+import { ProductoformComponent } from './product/productoform/productoform.component';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
-import { BuscadorPipe } from './productos/buscador.pipe';
+import { LoginComponent } from './usuario/login/login.component';
+import { BuscadorPipe } from './product/productos/buscador.pipe';
+import { NewCategoriaComponent } from './categoria/new-categoria/new-categoria.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,12 +37,10 @@ import { BuscadorPipe } from './productos/buscador.pipe';
     MainComponent,
     ProductosComponent,
     ProductoComponent,
-    ContactoComponent,
+
     CarteraComponent,
-    SesionComponent,
     NotfoundComponent,
     MenueditorComponent,
-    PersonalComponent,
     ListaUsuarioComponent,
     ListaProductosComponent,
     ListaCategoriaComponent,
@@ -50,7 +48,8 @@ import { BuscadorPipe } from './productos/buscador.pipe';
     CategoriaformComponent,
     ProductoformComponent,
     LoginComponent,
-    BuscadorPipe
+    BuscadorPipe,
+    NewCategoriaComponent
   ],
   imports: [
     BrowserModule,

@@ -32,8 +32,8 @@ class ProductoViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,) 
+    #authentication_classes = (TokenAuthentication,)
+    #permission_classes = (IsAuthenticated,) 
 
 
 
@@ -49,6 +49,7 @@ class CustomAuthToken(ObtainAuthToken):
             'token': token.key,
             'user_id': user.id,
             'user_username': user.username,
+            'is_staff': user.is_staff
 
 
         })

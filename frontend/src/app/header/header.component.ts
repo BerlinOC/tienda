@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-import {LoginServiceService} from './../login/login-service.service'
+import {LoginServiceService} from '../usuario/login/login-service.service'
 import {Router} from '@angular/router'
 @Component({
   selector: 'app-header',
@@ -11,15 +11,17 @@ export class HeaderComponent implements OnInit {
   public isLogin : boolean =false;
   public usuario = null ;
   nombreUsuario:string;
-  public isadmin =false;
+  public isadmin: boolean =false;
   constructor( private login : LoginServiceService, private router : Router) { }
  
 
   ngOnInit() {
     this.ObtenerSesion();
-  
     this.nombreUsuario=localStorage.getItem('user')
-   
+    this.isadmin=  Boolean(JSON.parse(localStorage.getItem('admi'))); 
+    console.log(typeof(this.isadmin))
+   // this.isadmin=localStorage.getItem('is_staff')
+  
   }
 
   ObtenerSesion(){

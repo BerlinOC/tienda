@@ -19,6 +19,7 @@ from model.views import CarteraViewSet,ProductoViewSet,EjemplarViewSet,Categoria
 from django.conf.urls import url
 from rest_framework import routers
 from model.views import CustomAuthToken
+from django.conf import settings 
 #from rest_framework.authtoken.views import ObtainAuthToken
 
 # Routers provide an easy way of automatically determining the URL conf.
@@ -40,3 +41,6 @@ urlpatterns = [
   #  url(r'^auth/',ObtainAuthToken.as_view())
   url(r'^auth/',CustomAuthToken.as_view())
 ]
+if settings.DEBUG :
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

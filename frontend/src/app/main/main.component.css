@@ -1,10 +1,11 @@
 body {
     
-    background: url(..\..\assets\photo-1585071863849-9c95194bc0d8.jpg) no-repeat center center fixed;
+    background: url(..\..\assets\main.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    z-index: 1;
 
 }
 

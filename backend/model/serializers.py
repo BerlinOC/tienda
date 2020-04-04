@@ -14,7 +14,7 @@ class ProductoSerializer(serializers.ModelSerializer):
 
         class Meta:
             model = producto
-            fields=( 'id','nombreProducto','descripcion', 'precio','categoriaDeProducto')
+            fields=( 'id','nombreProducto','descripcion', 'precio','categoriaDeProducto','imagen')
 
 class EjemplarSerializer(serializers.ModelSerializer):
         class Meta:
@@ -30,5 +30,10 @@ class CarteraSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
         class Meta:
             model = User
-            fields=('username','password', 'email', 'is_staff')
+            fields=('id','username','password','email', 'is_staff')
+                
+
+        def create(self,validated_data):
+            user=User.objects.create_user(**validated_data)
+            return user
                    
